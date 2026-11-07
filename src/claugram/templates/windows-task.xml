@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<!-- Reference template. `claugram init --install-service` uses schtasks directly. -->
+<Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Description>Claugram controller</Description>
+  </RegistrationInfo>
+  <Triggers>
+    <LogonTrigger>
+      <Enabled>true</Enabled>
+    </LogonTrigger>
+  </Triggers>
+  <Settings>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <StartWhenAvailable>true</StartWhenAvailable>
+  </Settings>
+  <Actions>
+    <Exec>
+      <Command>claugram</Command>
+      <Arguments>controller --project "PROJECT_PATH"</Arguments>
+      <WorkingDirectory>PROJECT_PATH</WorkingDirectory>
+    </Exec>
+  </Actions>
+</Task>

@@ -1,0 +1,11 @@
+[Unit]
+Description=Claugram controller for %i
+After=network-online.target
+
+[Service]
+ExecStart=claugram controller --project %h/projects/%i
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

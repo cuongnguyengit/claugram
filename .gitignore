@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# claugram: hooks/env are local-only (secrets live in user-level credentials.toml,
+# never in the repo). settings.local.json is per-machine.
+.claude/settings.local.json
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Local scratch / logs
+*.log
+scratch/
+
+# claugram live-test target artifacts inside samples/ (machine-specific, per-init)
+samples/**/.claugram/
+samples/**/.claude/
+samples/**/CLAUDE.md
+
+# per-project claugram config is machine/user-specific (chat ids etc.) — never
+# ship it in this source repo. Onboard a real project with `claugram init`.
+/.claugram/
+samples/**/HELLO.txt
+
+# local agent tooling
+.wolf/
+.codex/
